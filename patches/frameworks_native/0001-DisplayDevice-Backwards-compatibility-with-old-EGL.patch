@@ -3,6 +3,33 @@ From: fefifofum <fefifofum@email.com>
 Date: Tue, 3 Jun 2014 12:27:25 +0200
 Subject: [PATCH] DisplayDevice: Backwards compatibility with old EGL
 
+From 4.1 to 4.2, the display subsystem was reworked to
+use SurfaceTextureClient/BufferQueue instead of
+FramebufferNativeWindow for the framebuffer itself.
+
+Unfortunately, some legacy EGL libraries make assumptions
+that any framebuffer device will be FramebufferNativeWindow.
+
+These EGL libraries will fail when used in 4.2 as if the
+framebuffer is not FramebufferNativeWindow, they will
+try to dequeue more than one buffer at a time, which
+will cause a hang of the graphics subsystem.
+
+This allows use of FramebufferNativeWindow to keep
+legacy EGL implementations happy.  Confirmed EGL
+implementations that need this include but are
+not limited to:
+
+Set BOARD_EGL_NEEDS_LEGACY_FB to use
+
+Tegra2/3 ICS EGL
+Mali400 ICS EGL (Allwinner A10)
+Mali400 Jellybean (4.1) EGL (Samsung Exynos4)
+
+Original implementation by OndraOrg of XDA:
+http://forum.xda-developers.com/showpost.php?p=34469675&postcount=19
+
+Change-Id: I74005cf6753b3c9bfb4c1e32fb641f5167787917
 ---
  services/surfaceflinger/Android.mk        | 4 ++++
  services/surfaceflinger/DisplayDevice.cpp | 8 ++++++++
