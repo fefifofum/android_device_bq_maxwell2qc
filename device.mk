@@ -105,6 +105,7 @@ PRODUCT_PACKAGES += \
 # Default props
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
+    ro.sf.hwrotation=180 \
     ro.sf.lcd_density=213 \
     ro.sf.lcdc_composer=0 \
     debug.hwui.render_dirty_regions=false \
