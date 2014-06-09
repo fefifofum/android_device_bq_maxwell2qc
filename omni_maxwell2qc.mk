@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 The Android Open Source Project
+# Copyright (C) 2014 OmniROM Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,18 +14,23 @@
 # limitations under the License.
 #
 
+# Inherit common Omni configurations
+$(call inherit-product, vendor/omni/config/common_tablet.mk)
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Inherit device specific configurations
 $(call inherit-product, device/bq/maxwell2qc/device.mk)
 
-# Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_maxwell2qc
+# Set those variables here to overwrite the inherited values
+PRODUCT_NAME := omni_maxwell2qc
 PRODUCT_DEVICE := maxwell2qc
 PRODUCT_BRAND := bq
 PRODUCT_MODEL := bq Maxwell 2 Quad Core
 PRODUCT_MANUFACTURER := bq
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=bq_Maxwell2_QuadCore
 
 # Inherit from the non-open-source side
 $(call inherit-product, vendor/bq/maxwell2qc/maxwell2qc-vendor.mk)

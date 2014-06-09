@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-add_lunch_combo cm_maxwell2qc-userdebug
+add_lunch_combo omni_maxwell2qc-userdebug
 
 # Run device patches on the tree
 sh device/bq/maxwell2qc/patches/apply.sh

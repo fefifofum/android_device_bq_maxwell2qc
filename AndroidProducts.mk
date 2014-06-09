@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_maxwell2qc.mk
+    $(LOCAL_DIR)/omni_maxwell2qc.mk

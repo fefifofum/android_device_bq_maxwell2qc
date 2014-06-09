@@ -101,7 +101,6 @@ PRODUCT_PACKAGES += \
 
 # Default props
 PRODUCT_PROPERTY_OVERRIDES += \
-    cm.updater.uri=http://bokerones.noip.me/CyanogenModOTA/api \
     ro.opengles.version=131072 \
     ro.sf.hwrotation=180 \
     ro.sf.lcd_density=213 \
