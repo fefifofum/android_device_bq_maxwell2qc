@@ -11,9 +11,9 @@ Use the following local manifest:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <manifest>
-      <project name="fefifofum/android_device_bq_maxwell2qc" path="device/bq/maxwell2qc" revision="android-4.4" />
-      <project name="fefifofum/android_kernel_bq_maxwell2qc" path="kernel/bq/maxwell2qc" revision="android-4.4" />
-      <project name="fefifofum/proprietary_vendor_bq" path="vendor/bq" revision="android-4.4" />
+      <project name="fefifofum/android_device_bq_maxwell2qc" path="device/bq/maxwell2qc" remote="github" revision="android-4.4" />
+      <project name="fefifofum/android_kernel_bq_maxwell2qc" path="kernel/bq/maxwell2qc" remote="github" revision="android-4.4" />
+      <project name="fefifofum/proprietary_vendor_bq" path="vendor/bq" remote="github" revision="android-4.4" />
     </manifest>
 
 Sync and build:
