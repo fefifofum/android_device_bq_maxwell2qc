@@ -43,7 +43,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/bq/maxwell2qc/prebuilt/audio_policy.conf:system/etc/audio_policy.conf \
     device/bq/maxwell2qc/prebuilt/config.txt:system/etc/firmware/config.txt \
-    device/bq/maxwell2qc/prebuilt/egl.cfg:system/lib/egl/egl.cfg \
     device/bq/maxwell2qc/prebuilt/gps.conf:system/etc/gps.conf \
     device/bq/maxwell2qc/prebuilt/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
     device/bq/maxwell2qc/prebuilt/media_codecs.xml:system/etc/media_codecs.xml \
