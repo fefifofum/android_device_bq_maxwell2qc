@@ -48,9 +48,6 @@ PRODUCT_COPY_FILES += \
     device/bq/maxwell2qc/prebuilt/media_codecs.xml:system/etc/media_codecs.xml \
     device/bq/maxwell2qc/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
     device/bq/maxwell2qc/prebuilt/nvram_RK903_26M.cal:system/etc/firmware/nvram_RK903_26M.cal \
-    device/bq/maxwell2qc/prebuilt/packages-compat.xml:system/etc/packages-compat.xml \
-    device/bq/maxwell2qc/prebuilt/packages-composer.xml:system/etc/packages-composer.xml \
-    device/bq/maxwell2qc/prebuilt/performance_info.xml:system/etc/performance_info.xml \
     device/bq/maxwell2qc/prebuilt/rk29-keypad.kl:/system/usr/keylayout/rk29-keypad.kl \
     device/bq/maxwell2qc/prebuilt/rk3x:system/bin/rk3x
 
@@ -104,7 +101,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     ro.sf.hwrotation=180 \
     ro.sf.lcd_density=213 \
-    ro.sf.lcdc_composer=0 \
     debug.hwui.render_dirty_regions=false \
     ro.config.facelock=enable_facelock \
     persist.facelock.detect_cutoff=5000 \
