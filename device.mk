@@ -42,12 +42,12 @@ PRODUCT_COPY_FILES += \
 # Prebuilt
 PRODUCT_COPY_FILES += \
     device/bq/maxwell2qc/prebuilt/audio_policy.conf:system/etc/audio_policy.conf \
-    device/bq/maxwell2qc/prebuilt/config.txt:system/etc/firmware/config.txt \
+    device/bq/maxwell2qc/prebuilt/config.txt:system/vendor/firmware/config.txt \
     device/bq/maxwell2qc/prebuilt/gps.conf:system/etc/gps.conf \
     device/bq/maxwell2qc/prebuilt/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
     device/bq/maxwell2qc/prebuilt/media_codecs.xml:system/etc/media_codecs.xml \
     device/bq/maxwell2qc/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
-    device/bq/maxwell2qc/prebuilt/nvram_RK903_26M.cal:system/etc/firmware/nvram_RK903_26M.cal \
+    device/bq/maxwell2qc/prebuilt/nvram_RK903_26M.cal:system/vendor/firmware/nvram_RK903_26M.cal \
     device/bq/maxwell2qc/prebuilt/rk29-keypad.kl:/system/usr/keylayout/rk29-keypad.kl \
     device/bq/maxwell2qc/prebuilt/rk3x:system/bin/rk3x
 
@@ -109,8 +109,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.supplicant_scan_interval=15 \
     dalvik.vm.debug.alloc=0
 
-# Wifi overlay
-$(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+# Broadcom firmware
+WIFI_BAND := 802_11_BG
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
 
 # Dalvik heap config
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
